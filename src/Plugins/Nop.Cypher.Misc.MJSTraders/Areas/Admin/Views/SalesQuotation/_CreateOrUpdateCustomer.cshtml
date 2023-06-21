@@ -1,0 +1,32 @@
+﻿@model SalesQuotationCustomerModel
+
+@inject IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" value="@Model.Id" hidden="hidden" />
+
+@{
+    const string hideInfoBlockAttributeName = "SalesQuotaionCustomerPage.HideInfoBlock";
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideInfoBlockAttributeName);
+
+    const string hideSalesQuotaionsBlockAttributeName = "SalesQuotaionCustomerPage.HideSalesQuotaionsBlock";
+    var hideSalesQuotaionsBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideSalesQuotaionsBlockAttributeName, defaultValue: true);
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="sales-quotation-panels">
+                @if (Model.Id == 0)
+                {
+                    <nop-card asp-name="sales-quotation-customer-info" asp-icon="fas fa-info" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Panel.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdateCustomer.Info", Model)</nop-card>
+                }
+                @if (Model.Id > 0)
+                {
+                    <nop-card asp-name="sales-quotation-customer-quotations" asp-icon="fas fa-cart-plus" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Panel.SalesQuotation")" asp-hide-block-attribute-name="@hideSalesQuotaionsBlockAttributeName" asp-hide="@hideSalesQuotaionsBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdateCustomer.SalesQuotaions", Model)</nop-card>
+                }
+            </nop-cards>
+        </div>
+    </div>
+</section>

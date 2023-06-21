@@ -1,0 +1,279 @@
+﻿@model PONumbersModel
+@inject IDownloadService downloadService
+
+@{
+    Layout = "_ColumnsTwo";
+
+    //title
+    NopHtml.AddTitleParts(T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Page.Title").Text);
+    //page class
+    NopHtml.AppendPageCssClassParts("html-account-page");
+    NopHtml.AppendPageCssClassParts("html-my-product-reviews-list-page");
+}
+
+@section left
+    {
+    @await Component.InvokeAsync("CustomerNavigation", new { selectedTabId = 200 })
+}
+
+@{
+    //register CSS and JS
+    NopHtml.AddCssFileParts("~/lib_npm/fine-uploader/fine-uploader/fine-uploader.min.css");
+    NopHtml.AddScriptParts(ResourceLocation.Footer, "~/lib_npm/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.min.js");
+
+    //other variables
+    var randomNumber = CommonHelper.GenerateRandomInteger();
+    var clientId = "download" + randomNumber;
+    var download = await downloadService.GetDownloadByIdAsync(Model.DownloadId);
+
+    var disableUrl = Convert.ToBoolean(ViewData["nop.DownloadEditor.DisableUrl"] ?? false);
+}
+
+<script asp-location="Footer">
+
+    function toggleDownloadRecordType() {
+        if ($('#cbUseDownloadURL').is(':checked')) {
+            $('#pnlDownloadFile@(randomNumber)').hide();
+        } else {
+            $('#pnlDownloadFile@(randomNumber)').show();
+        }
+    }
+
+</script>
+
+<div class="page account-page order-event-page">
+    <div class="page-title">
+        <h1>@T("Account.MyAccount") - @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Title")</h1>
+    </div>
+    <form asp-route="Nop.Cypher.Misc.MJSTraders.MyAccount.MJSTraders.CreatePONumber" method="post">
+        <div asp-validation-summary="ModelOnly" class="message-error"></div>
+        <div class="fieldset">
+            <div class="form-fields">
+                @*<div class="inputs">
+                        <label asp-for="Title" asp-postfix=":"> </label><nop-required />
+                        <input asp-for="Title" />
+                        <span asp-validation-for="Title"></span>
+                    </div>*@
+                <input type="hidden" asp-for="@Model.CustomerId" />
+                <div class="inputs upload-doc-box">
+                    <label asp-for="DownloadId" asp-postfix=":"></label>
+                    <div class="page page-default">
+                        <div class="page-body">
+                            <div id="@(clientId + "value")">
+                                <input type="hidden" asp-for="@Model.DownloadId" />
+                            </div>
+                            <div class="form-group row" id="pnlDownloadFile@(randomNumber)">
+                                <!-- <div class="col-xs-4">
+                                    <div class="label-wrapper">
+                                        <label class="control-label">
+                                            @T("Admin.Download.UploadFile")
+                                        </label>
+                                    </div>
+                                </div> -->
+                                <div class="">
+                                    @*fine uploader container*@
+                                    <div id="@clientId">
+                                        <noscript>
+                                            <p>
+                                                Please enable JavaScript to use file uploader.
+                                            </p>
+                                            <!-- or put a simple form for upload here -->
+                                        </noscript>
+                                    </div>
+                                    @*fine uploader template (keep it synchronized to \Content\fineuploader\templates\default.html)*@
+                                    <script type="text/template" id="@(clientId)-qq-template" asp-location="Footer">
+                                        <div class="qq-uploader-selector qq-uploader">
+                                            <div class="qq-upload-drop-area-selector qq-upload-drop-area" qq-hide-dropzone>
+                                                <span>@T("Common.FileUploader.DropFiles")</span>
+                                            </div>
+                                            <div class="qq-upload-button-selector qq-upload-button">
+                                                <div>@T("Common.FileUploader.Upload")</div>
+                                            </div>
+                                            <span class="qq-drop-processing-selector qq-drop-processing">
+                                                <span>@T("Common.FileUploader.Processing")</span>
+                                                <span class="qq-drop-processing-spinner-selector qq-drop-processing-spinner"></span>
+                                            </span>
+                                            <ul class="qq-upload-list-selector qq-upload-list">
+                                                <li>
+                                                    <div class="qq-progress-bar-container-selector">
+                                                        <div class="qq-progress-bar-selector qq-progress-bar"></div>
+                                                    </div>
+                                                    <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
+                                                    <span class="qq-edit-filename-icon-selector qq-edit-filename-icon"></span>
+                                                    <span class="qq-upload-file-selector qq-upload-file"></span>
+                                                    <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                                                    <span class="qq-upload-size-selector qq-upload-size"></span>
+                                                    <a class="qq-upload-cancel-selector qq-upload-cancel" href="#">@T("Common.FileUploader.Cancel")</a>
+                                                    <a class="qq-upload-retry-selector qq-upload-retry" href="#">@T("Common.FileUploader.Retry")</a>
+                                                    <a class="qq-upload-delete-selector qq-upload-delete" href="#">@T("Common.FileUploader.Delete")</a>
+                                                    <span class="qq-upload-status-text-selector qq-upload-status-text"></span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </script>
+
+                                    <script asp-location="Footer">
+                                        $(document).ready(function () {
+                                            $("#@clientId").fineUploader({
+                                                request: {
+                                                    endpoint: '@(Url.Action("AsyncUpload", "Download"))'
+                                                },
+                                                template: "@(clientId)-qq-template",
+                                                multiple: false
+                                            }).on("complete", function (event, id, name, responseJSON, xhr) {
+                                                $("#@(clientId + "downloadurl")").html("<a class='btn btn-default ml-1' href='" + responseJSON.downloadUrl + "'><i class='fas fa-download'></i>@T("Admin.Download.DownloadUploadedFile")</a>");
+                                                $("#@(clientId + "value") input").val(responseJSON.downloadId);
+                                                $("#@(clientId + "remove")").show();
+                                            });
+
+                                            $("#@(clientId + "remove")").click(function (e) {
+                                                $("#@(clientId + "downloadurl")").html("");
+                                                $("#@(clientId + "value") input").val(0);
+                                                $("#@(clientId) .qq-upload-list-selector").empty();
+                                                $(this).hide();
+                                            });
+                                        });
+                                    </script>
+                                    <div style="clear: both;">
+                                        <div id="@(clientId + "downloadurl")" class="float-left my-1">
+                                            @if (download != null)
+                                            {
+                                                <a class='btn btn-default' href="@(Url.Action("DownloadFile", "Download", new { downloadGuid = download.DownloadGuid}))"><i class='fas fa-download'></i>@T("Admin.Download.DownloadUploadedFile")</a>
+                                            }
+                                        </div>
+                                        <div class="float-left my-1">
+                                            @if (download != null)
+                                            {
+                                                <span id="@(clientId + "remove")" class="btn btn-default ml-2"><i class="far fa-trash-alt"></i>@T("Admin.Download.RemoveDownload")</span>
+                                            }
+                                            else
+                                            {
+                                                <span id="@(clientId + "remove")" class="btn btn-default ml-2" style="display:none;"><i class="far fa-trash-alt"></i>@T("Admin.Download.RemoveDownload")</span>
+                                            }
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <nop-alert asp-alert-id="saveDownloadUrlAlert" asp-alert-message="@T("Admin.Download.SaveDownloadURL.Alert.FailedSave")" />
+                    <nop-alert asp-alert-id="saveDownloadUrlFailed" />
+                    <span asp-validation-for="DownloadId"></span>
+                </div>
+                <div class="buttons">
+                    <input type="submit" id="register-button" class="button-1 register-next-step-button" value="@T("Admin.Common.Save")" name="register-button" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="page-body">
+        <div class="section order-event-history">
+            @if (Model.PONumbers.Count > 0)
+            {
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <colgroup>
+                            <col width="30%">
+                            <col width="10%">
+                            <col width="25%">
+                            <col width="20%">
+                            <col width="15%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th class="ponubmer-title">
+                                    @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Title")
+                                </th>
+                                <th class="isapprove">
+                                    @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.IsApprove")
+                                </th>
+                                <th class="approveon">
+                                    @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.ApproveOn")
+                                </th>
+                                <th class="download-file">
+                                    @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Download")
+                                </th>
+                                <th class="delete">
+                                    @T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Delete")
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (var i = 0; i < Model.PONumbers.Count; i++)
+                            {
+                                var item = Model.PONumbers[i];
+                                <tr @(i % 2 == 0 ? Html.Raw(" class=\"odd\"") : Html.Raw(" class=\"even\""))>
+                                    <td class="product-name">
+                                        @item.Title
+                                    </td>
+                                    <td class="category-name">
+                                        @if (item.IsApprove)
+                                        {
+                                            <i class="fa fa-check true-icon" nop-value="true"></i>
+                                        }
+                                        else
+                                        {
+                                            <i class="fa fa-close false-icon" nop-value="false"></i>
+                                        }
+                                    </td>
+                                    <td class="customer-email">
+                                        @item.ApproveOnUtc
+                                    </td>
+                                    <td class="message">
+                                        <button type="button" class="btn button-2" name="download" onclick="setLocation('@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = item.DownloadId })')">@T("Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.DownloadFile.Button")</button>
+                                    </td>
+                                    <td class="message">
+                                        @if (!item.IsApprove)
+                                        {
+                                            <button type="button" class="btn button-2" name="delete" onclick="deletecustomerponumber(@item.Id)">@T("Admin.Common.Delete")</button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <script asp-location="Footer">
+                    function deletecustomerponumber(poNumberId) {
+                        if (confirm('@T("Nop.Cypher.Misc.MJSTraders.PONumber.Deleted.Alert")')) {
+                            var postData = {
+                                poNumberId: poNumberId
+                            };
+                            addAntiForgeryToken(postData);
+
+                            $.ajax({
+                                cache: false,
+                                type: "POST",
+                                url: "@Url.Action("DeleteCustomerPONumbers", "PONumber")",
+                                data: postData,
+                                dataType: "json",
+                                success: function (data, textStatus, jqXHR) {
+                                    displayBarNotification(data.message, 'success', 3500);
+                                    setTimeout(function () {
+                                        location.href = data.redirect;
+                                    }, 3500);
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    alert('Failed to delete');
+                                }
+                            });
+                        }
+                    }
+                </script>
+                var pager = await Html.PagerAsync(Model.PagerModel);
+                if (!string.IsNullOrEmpty(await pager.RenderHtmlContentAsync()))
+                {
+                    <div class="pager">
+                        @pager
+                    </div>
+                }
+            }
+            else
+            {
+                <div class="no-data">
+                    @T("Nop.Cypher.Misc.MJSTraders.PONumber.NoData")
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@model PODocumentModel
+
+@inject IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+@{
+    const string hidePODocumentBlockAttributeName = "OrderPage.HidePODocumentBlock";
+    var hidePODocumentBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hidePODocumentBlockAttributeName);
+}
+<nop-card asp-name="order-po_document" asp-icon="fas fa-list-alt panel-icon" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Panel.Title")" asp-hide-block-attribute-name="@hidePODocumentBlockAttributeName" asp-hide="@hidePODocumentBlock" asp-advanced="false">
+    @await Html.PartialAsync("~/Plugins/Cypher.MJSTraders/Areas/Admin/Views/Shared/Components/PODocument/_CreateOrUpdate.PODocument.cshtml", Model)
+</nop-card>

@@ -1,0 +1,37 @@
+﻿@model SalesQuotationModel
+
+@inject IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+<div asp-validation-summary="All"></div>
+<input asp-for="Id" value="@Model.Id" hidden="hidden" />
+<input asp-for="ReferenceNumber" value="@Model.ReferenceNumber" hidden="hidden" />
+<input asp-for="SalesQuotationCustomerId" value="@Model.SalesQuotationCustomerId" hidden="hidden" />
+
+@{
+    const string hideInfoBlockAttributeName = "SalesQuotaionPage.HideInfoBlock";
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideInfoBlockAttributeName);
+
+    const string hideLinesBlockAttributeName = "SalesQuotaionPage.HideLinesBlock";
+    var hideLinesBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideLinesBlockAttributeName, defaultValue: true);
+
+    const string hideAddNewLinesBlockAttributeName = "SalesQuotaionPage.HideAddNewLinesBlock";
+    var hideAddNewLinesBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideAddNewLinesBlockAttributeName, defaultValue: true);
+
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="sales-quotation-panels">
+                <nop-card asp-name="sales-quotation-info" asp-icon="fas fa-info" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Panel.Title")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>
+                @if (Model.Id > 0)
+                {
+                    <nop-card asp-name="sales-quotation-lines" asp-icon="fas fa-cart-plus" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Panel.Title")" asp-hide-block-attribute-name="@hideLinesBlockAttributeName" asp-hide="@hideLinesBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Lines", Model)</nop-card>
+                    <nop-card asp-name="sales-quotation-newline" asp-icon="fas fa-cart-plus" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationNewLine.Panel.Title")" asp-hide-block-attribute-name="@hideAddNewLinesBlockAttributeName" asp-hide="@hideAddNewLinesBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.AddNewLine", Model)</nop-card>
+                    <nop-card asp-name="sales-quotation-document" asp-icon="fas fa-book" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Panel.Title")" asp-hide-block-attribute-name="@hideAddNewLinesBlockAttributeName" asp-hide="@hideAddNewLinesBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.AddNewDocument", Model)</nop-card>
+                }
+            </nop-cards>
+        </div>
+    </div>
+</section>

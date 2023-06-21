@@ -1,0 +1,143 @@
+﻿@model SalesQuotationModel
+
+<div class="card-body">
+    <div class="card card-default">
+        <div class="card-body">
+            <input asp-for="@Model.salesQuotationNewLineModel.SaleQuotationId" type="hidden" />
+
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <nop-label asp-for="@Model.salesQuotationNewLineModel.Name" />
+                </div>
+                <div class="col-sm-9">
+                    <nop-editor asp-for="@Model.salesQuotationNewLineModel.Name" />
+                    <span asp-validation-for="@Model.salesQuotationNewLineModel.Name"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <nop-label asp-for="@Model.salesQuotationNewLineModel.Description" />
+                </div>
+                <div class="col-sm-9">
+                    <nop-textarea asp-for="@Model.salesQuotationNewLineModel.Description" />
+                    <span asp-validation-for="@Model.salesQuotationNewLineModel.Description"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <nop-label asp-for="@Model.salesQuotationNewLineModel.Qty" />
+                </div>
+                <div class="col-sm-9">
+                    <nop-editor asp-for="@Model.salesQuotationNewLineModel.Qty" />
+                    <span asp-validation-for="@Model.salesQuotationNewLineModel.Qty"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-sm-3">
+                    <nop-label asp-for="@Model.salesQuotationNewLineModel.Price" />
+                </div>
+                <div class="col-sm-9">
+                    <nop-editor asp-for="@Model.salesQuotationNewLineModel.Price" />
+                    <span asp-validation-for="@Model.salesQuotationNewLineModel.Price"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-9 offset-md-3">
+                    <button type="button" id="add-salesquotation-line" class="btn btn-primary">@T("Admin.Common.AddNewRecord")</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var _name, _description, _qty, _price;
+
+        $('#add-salesquotation-line').click(function () {
+            _name= $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Name)").val();
+            _description = $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Description)").val();
+            _qty=  $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Qty)").val();
+            _price =  $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Price)").val();
+
+            if (_name == null || _name == "") {
+                alert("Name must be required");
+                $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Name)").focus();
+                return false;
+            } else if (_qty == null || _qty == "") {
+                alert("Quantity must be required");
+                $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Qty)").focus();
+                return false;
+            } else if (_qty == "0") {
+                alert("Minimum 1 quantity required");
+                $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Qty)").focus();
+                return false;
+            } else if (_price == null || _price == "") {
+                alert("Price must be required");
+                $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Price)").focus();
+                return false;
+            }
+
+
+            $('#add-salesquotation-line').attr('disabled', true);
+            var postData = {
+                Name: $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Name)").val(),
+                Description: $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Description)").val(),
+                Price: $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Price)").val(),
+                Qty: $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Qty)").val(),
+                SaleQuotationId: $("#@Html.IdFor(model => model.salesQuotationNewLineModel.SaleQuotationId)").val()
+            };
+            addAntiForgeryToken(postData);
+
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "@Html.Raw(Url.Action("SalesQuotationLineAddPopup", "SalesQuotation", null))",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    if (data.Result) {
+                        //reload grid
+                        updateTable('#salesquotationline-grid');
+
+                        //clear input value
+                        $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Name)").val('');
+                        $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Description)").val('');
+                        $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Qty)").val("0");
+                        $("#@Html.IdFor(model => model.salesQuotationNewLineModel.Price)").val('');
+                        $('#add-salesquotation-line').attr('disabled', false);
+                        return;
+                    } else {
+                        //display errors if returned
+                        display_nop_error(data);
+                        $('#add-salesquotation-line').attr('disabled', false);
+                        return;
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
+                    $('#add-salesquotation-line').attr('disabled', false);
+                }
+            });
+        });
+    });
+</script>
+@*<form asp-controller="SalesQuotation" asp-action="SalesQuotationLineAddPopup"
+          asp-route-btnId="@Context.Request.Query["btnId"]"
+          asp-route-formId="@Context.Request.Query["formId"]">
+        <div class="content-header clearfix">
+            <h1 class="pull-left">
+                @T("Admin.Common.AddNew")
+            </h1>
+            <div class="pull-right">
+                <button type="submit" name="save" class="btn bg-blue">
+                    <i class="fa fa-floppy-o"></i>
+                    @T("Admin.Common.Save")
+                </button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="form-horizontal">
+                @await Html.PartialAsync("~/Plugins/Cypher.MJSTraders/Areas/Admin/Views/SalesQuotation/_SalesQuotationLine.CreateOrUpdate.cshtml", Model)
+            </div>
+        </div>
+    </form>*@

@@ -1,0 +1,251 @@
+﻿@model MJSBussinessModel
+@{
+    NopHtml.AddScriptParts(ResourceLocation.Footer, "~/Plugins/Cypher.MJSTraders/Content/js/slick.min.js");
+    NopHtml.AddCssFileParts("~/Plugins/Cypher.MJSTraders/Content/css/slick.css");
+    NopHtml.AddCssFileParts("~/Plugins/Cypher.MJSTraders/Content/css/slick-theme.css");
+}
+
+@if (!string.IsNullOrEmpty(Model.ChooseYourBusinessText) || !string.IsNullOrEmpty(Model.LearnAboutText))
+{
+    <div class="twoSecBlock">
+        <div class="twoSecInner">
+            <div class="twoSecMain">
+                @if (!string.IsNullOrEmpty(Model.ChooseYourBusinessText))
+                {
+                    <div class="ChooseYourBusinessText">
+                        @Html.Raw(Model.ChooseYourBusinessText)
+                    </div>
+                }
+                @if (!string.IsNullOrEmpty(Model.LearnAboutText))
+                {
+                    <div class="LearnAboutText">
+                        @Html.Raw(Model.LearnAboutText)
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+@*<div class="choose-title">
+        Choose Your Business
+    </div>
+    <div class="chooser-yr-bussiness-slider choose-yr-bussiness-main">
+        <div class="slide-1 slide">
+            <ul>
+                <li class="slide1-one">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Textile_1.png" alt="">
+                        <div>Textile</div>
+                    </a>
+                </li>
+                <li class="slide1-two">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Oil-and-gas_2.png" alt="">
+                        <div>Oil &amp; Gas</div>
+                    </a>
+                </li>
+                <li class="slide1-three">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Power-Generation-Distribution_3.png" alt="">
+                        <div>Power Generation &amp; Distribution</div>
+                    </a>
+                </li>
+                <li class="slide1-four">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/pharma_4.png" alt="">
+                        <div>Pharma</div>
+                    </a>
+                </li>
+                <li class="slide1-five">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/construction_5.png" alt="">
+                        <div>Construction</div>
+                    </a>
+                </li>
+                <li class="slide1-six">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/petrochemical_6.png" alt="">
+                        <div>Petrochemicals</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-2 slide">
+            <ul>
+                <li class="slide1-one">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Fertilizers_7.png" alt="">
+                        <div>Fertilizers</div>
+                    </a>
+                </li>
+                <li class="slide1-two">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/chemical_8.png" alt="">
+                        <div>Chemical</div>
+                    </a>
+                </li>
+                <li class="slide1-three">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Govt-Semi-Govt_9.png" alt="">
+                        <div>Govt./ Semi Govt</div>
+                    </a>
+                </li>
+                <li class="slide1-four">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/automotive_10.png" alt="">
+                        <div>Automotive</div>
+                    </a>
+                </li>
+                <li class="slide1-five">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Port-Terminals_11.png" alt="">
+                        <div>Port Terminals</div>
+                    </a>
+                </li>
+                <li class="slide1-six">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/cemet_12.png" alt="">
+                        <div>Cement</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-3 slide">
+            <ul>
+                <li class="slide1-one">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Surgical_13.png" alt="">
+                        <div>Surgical</div>
+                    </a>
+                </li>
+                <li class="slide1-two">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/mining_14.png" alt="">
+                        <div>Mining</div>
+                    </a>
+                </li>
+                <li class="slide1-three">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/food_15.png" alt="">
+                        <div>Food</div>
+                    </a>
+                </li>
+                <li class="slide1-four">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/aviation_16.png" alt="">
+                        <div>Aviation</div>
+                    </a>
+                </li>
+                <li class="slide1-five">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/health-care_17.png" alt="">
+                        <div>Health care</div>
+                    </a>
+                </li>
+                <li class="slide1-six">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/paint_18.png" alt="">
+                        <div>Paint</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-4 slide">
+            <ul>
+                <li class="slide1-one">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Hospitality_19.png" alt="">
+                        <div>Hospitality</div>
+                    </a>
+                </li>
+                <li class="slide1-two">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/fishing_20.png" alt="">
+                        <div>Fishing</div>
+                    </a>
+                </li>
+                <li class="slide1-three">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/cleaning_21.png" alt="">
+                        <div>Cleaning</div>
+                    </a>
+                </li>
+                <li class="slide1-four">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/telecom_22.png" alt="">
+                        <div>Telecom</div>
+                    </a>
+                </li>
+                <li class="slide1-five">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Logistics_23.png" alt="">
+                        <div>Logistics</div>
+                    </a>
+                </li>
+                <li class="slide1-six">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/leather_24.png" alt="">
+                        <div>Leather</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="slide-5 slide">
+            <ul>
+                <li class="slide1-one">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Light-Engineering_25.png" alt="">
+                        <div>Light Engineering</div>
+                    </a>
+                </li>
+                <li class="slide1-two">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/Manufacturing-Goods_26.png" alt="">
+                        <div>Manufacturing Goods</div>
+                    </a>
+                </li>
+                <li class="slide1-three">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/vendors_27.png" alt="">
+                        <div>Vendors</div>
+                    </a>
+                </li>
+                <li class="slide1-four">
+                    <a href="javascript:void(0)">
+                        <img src="/Themes/Venture/Content/img/ChooseYourBusiness/sports_28.png" alt="">
+                        <div>Sports</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>*@
+
+
+
+
+
+<script asp-location="Footer">
+    $(".chooser-yr-bussiness-slider").slick({
+        dots: false,
+        infinite: true,
+        speed: 400,
+        arrows: true,
+        adaptiveHeight: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        vertical: true,
+        responsive: [
+            {
+                breakpoint: 1701,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+</script>

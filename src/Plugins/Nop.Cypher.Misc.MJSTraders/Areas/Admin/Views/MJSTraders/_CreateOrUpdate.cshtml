@@ -1,0 +1,31 @@
+﻿@model ConfigurationModel
+
+@inject IGenericAttributeService genericAttributeService
+@inject IWorkContext workContext
+
+@{
+    const string hideInfoBlockAttributeName = "SalesQuotaionPage.HideInfoBlock";
+    var hideInfoBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideInfoBlockAttributeName);
+
+    const string hideMJSTradersBlockAttributeName = "SalesQuotaionPage.HideMJSTradersBlock";
+    var hideMJSTradersBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideMJSTradersBlockAttributeName, defaultValue: true);
+
+    const string hideMJSEnterpriceBlockAttributeName = "SalesQuotaionPage.HideMJSEnterpriceBlock";
+    var hideMJSEnterpriceBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideMJSEnterpriceBlockAttributeName, defaultValue: true);
+    
+    const string hideMJSBussinessBlockAttributeName = "SalesQuotaionPage.HideMJSBussinessBlock";
+    var hideMJSBussinessBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideMJSBussinessBlockAttributeName, defaultValue: true);
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="form-horizontal">
+            <nop-cards id="mjs-traders-panels">
+                <nop-card asp-name="mjs-traders-info" asp-icon="fas fa-info" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.Info")" asp-hide-block-attribute-name="@hideInfoBlockAttributeName" asp-hide="@hideInfoBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.Info", Model)</nop-card>
+                <nop-card asp-name="mjs-traders-mjstraders" asp-icon="fas fa-cart-plus" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSTraders")" asp-hide-block-attribute-name="@hideMJSTradersBlockAttributeName" asp-hide="@hideMJSTradersBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.MJSTraders", Model)</nop-card>
+                <nop-card asp-name="mjs-traders-mjsenterprice" asp-icon="fas fa-book" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSEnterprice")" asp-hide-block-attribute-name="@hideMJSEnterpriceBlockAttributeName" asp-hide="@hideMJSEnterpriceBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.MJSEnterprice", Model)</nop-card>
+                <nop-card asp-name="mjs-traders-mjsbussiness" asp-icon="fas fa-info" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSBussiness")" asp-hide-block-attribute-name="@hideMJSBussinessBlockAttributeName" asp-hide="@hideMJSBussinessBlock" asp-advanced="false">@await Html.PartialAsync("_CreateOrUpdate.MJSBussiness", Model)</nop-card>
+            </nop-cards>
+        </div>
+    </div>
+</section>

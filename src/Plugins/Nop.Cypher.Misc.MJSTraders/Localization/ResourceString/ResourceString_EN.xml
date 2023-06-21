@@ -1,0 +1,971 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Language Name="English">
+
+  <!--Common-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Title">
+    <Value>MJSTraders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CustomerRole.SelectAny">
+    <Value>select any</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.NoData">
+    <Value>You haven't upload any po file yet</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Deleted">
+    <Value>The Purchase Order has been deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Deleted.Alert">
+    <Value>Are you sure want to delete this Purchase Order?</Value>
+  </LocaleResource>
+
+  <!--Site map - plugin menu-->
+
+  <LocaleResource Name="Nop.Cypher.Sitemap.Root">
+    <Value>nopCypher</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Sitemap.MJSTraders">
+    <Value>MJSTraders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Sitemap.MJSTraders.Configuration">
+    <Value>Purchase Order Configuration</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Sitemap.MJSTraders.PONumber">
+    <Value>Purchase Orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Sitemap.MJSTraders.SalesQuotation">
+    <Value>Sales Quotation</Value>
+  </LocaleResource>
+  <LocaleResource Name="admin.contentmanagement.messagetemplates.description.mjstraders.approveponumbercustomernotification">
+    <Value>Approved Purchase order</Value>
+  </LocaleResource>
+
+  <!--Configuration-->
+
+  <LocaleResource Name="mjst.podocument.title">
+    <Value>Purchase Order Documents</Value>
+  </LocaleResource>
+
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.Info">
+    <Value>Info</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSTraders">
+    <Value>MJS Traders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSEnterprice">
+    <Value>MJS Enterprice</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.MJSTraders.Panel.MJSBussiness">
+    <Value>MJS Bussiness</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.Page.Title">
+    <Value>Configuration</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.Title">
+    <Value>Configuration </Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.Enable">
+    <Value>Enable</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.Enable.Hint">
+    <Value>Enable</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.POCustomer">
+    <Value>PO customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.POCustomer.Hint">
+    <Value>Select Purchase Orders customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.PONumberPageSizeOnAccountPage">
+    <Value>Purchase Order page size</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.PONumberPageSizeOnAccountPage.Hint">
+    <Value>set the page size for Purchase Order e.g. '10' Purchase Order per page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.CartOfferCustomerRole">
+    <Value>Cart offer customer role</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.CartOfferCustomerRole.Hint">
+    <Value>Cart offer customer role</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.AbandonedMessageTitleContent">
+    <Value>Abandoned  message title content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.AbandonedMessageTitleContent.Hint">
+    <Value>Abandoned  message title content</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.OfferTime">
+    <Value>Offer time(hour)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.OfferTime.Hint">
+    <Value>Offer time(hour)</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersLogoId">
+    <Value>MJS Traders logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersLogoId.Hint">
+    <Value>MJS Traders logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersNTNNumber">
+    <Value>MJS Traders NTN number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersNTNNumber.Hint">
+    <Value>MJS Traders NTN number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersSTRNNo">
+    <Value>MJS Traders STRN no.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSTradersSTRNNo.Hint">
+    <Value>MJS Traders STRN no.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceLogoId">
+    <Value>MJS Enterprice logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceLogoId.Hint">
+    <Value>MJS Enterprice Logo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceNTNNumber">
+    <Value>MJS Enterprice NTN number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceNTNNumber.Hint">
+    <Value>MJS Enterprice NTN number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceSTRNNo">
+    <Value>MJS Enterprice STRN no.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.MJSEnterpriceSTRNNo.Hint">
+    <Value>MJS Enterprice STRN no.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.ChooseYourBusinessText">
+    <Value>Choose Your Business Text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.ChooseYourBusinessText.Hint">
+    <Value>Choose Your Business Text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.LearnAboutText">
+    <Value>Learn About Text</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Configuration.LearnAboutText.Hint">
+    <Value>Learn About Text</Value>
+  </LocaleResource>
+
+  <!--My Account / PO Number-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Page.Title">
+    <Value>Customer Purchase Orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Title">
+    <Value>Purchase Orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Menu.Title">
+    <Value>Purchase Orders</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.DownloadId">
+    <Value>Upload file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.IsApprove">
+    <Value>Approve?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.ApproveOn">
+    <Value>Approve On?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Download">
+    <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.Fields.Delete">
+    <Value>Delete</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.MyAccount.PONumber.DownloadFile.Button">
+    <Value>Download</Value>
+  </LocaleResource>
+
+  <!--Admin / List PO Number-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchTitle">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchTitle.Hint">
+    <Value>Search by specific 'Title'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchCustomer">
+    <Value>Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchCustomer.Hint">
+    <Value>Search by specific 'Customer'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchEmail">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchEmail.Hint">
+    <Value>Search by specific 'Email'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchIsApprove">
+    <Value>Approved</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchIsApprove.Hint">
+    <Value>Search by 'Approved' property.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchIsDelete">
+    <Value>Deleted</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Fields.SearchIsDelete.Hint">
+    <Value>Search by 'Deleted' property.</Value>
+  </LocaleResource>
+
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.List.Page.Title">
+    <Value>Purchase Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.List.Title">
+    <Value>Purchase Order</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.Customer">
+    <Value>Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.CompanyName">
+    <Value>Company name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.Download">
+    <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.Download.Link.No">
+    <Value>No file attached</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.IsApproved">
+    <Value>Approved?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.IsDelete">
+    <Value>Deleted?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.CreateOn">
+    <Value>Created on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.ApproveOn">
+    <Value>Approved on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PONumber.Fields.DeleteOn">
+    <Value>Deleted on</Value>
+  </LocaleResource>
+
+  <!--Order Edit / PODocument-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Panel.Title">
+    <Value>PO document</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document1">
+    <Value>PO document 1</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document2">
+    <Value>PO document 2</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document3">
+    <Value>PO document 3</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document4">
+    <Value>PO document 4</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document5">
+    <Value>PO document 5</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Title.Hint">
+    <Value>Enter title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Order">
+    <Value>Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Order.Hint">
+    <Value>Order identification</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Download">
+    <Value>Document</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Download.Hint">
+    <Value>Upload PO Order document which will display on order detail page</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.IsActive">
+    <Value>Is active</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.IsActive.Hint">
+    <Value>Is active</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.CreateOnUtc">
+    <Value>Create on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.CreateOnUtc.Hint">
+    <Value>Display time when it create.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.UpdateOnUtc">
+    <Value>Update on</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.UpdateOnUtc.Hint">
+    <Value>Display time when it update.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Notification.Success">
+    <Value> The PO document has been updated successfully.</Value>
+  </LocaleResource>
+
+  <!--Valoator PO number-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Validator.Title">
+    <Value>Title is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PONumber.Validator.Download">
+    <Value>Upload document is required.</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation Customer List-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.AddNew">
+    <Value>Add Quote</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuatationCustomer.BackTo">
+    <Value>back to sales quotation customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuatationCustomer.BackToList">
+    <Value>back to sales quotation customer list</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuatationCustomer.List.Page.Title">
+    <Value>Sales Quotation Customer List</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuatationCustomer.List.Title">
+    <Value>Sales Quotation Customer List</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Panel.Info">
+    <Value>Sales Quotation Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Panel.SalesQuotation">
+    <Value>Sales Quotations</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchName">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchName.Hint">
+    <Value>Search by specific 'Name'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchEmail">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchEmail.Hint">
+    <Value>Search by specific 'Email'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchCompany">
+    <Value>Company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchCompany.Hint">
+    <Value>Search by specific 'Company'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchTitle">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchTitle.Hint">
+    <Value>Search by specific 'Title'.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchReferenceNumber">
+    <Value>Reference number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.SalesQuotationCustomer.Fields.SearchReferenceNumber.Hint">
+    <Value>Search by specific 'Reference number'.</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation List-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Fields.ReferenceNumber">
+    <Value>Reference Number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Fields.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Fields.Name">
+    <Value>Customer Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Fields.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Create.Page.Title">
+    <Value>Add new sales quotation Customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Create.Title">
+    <Value>Add a new sales quotation Customer</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.Name.Required">
+    <Value>Name must required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.CreatedBy.Required">
+    <Value>CreatedBy must required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.Title.Required">
+    <Value>Title must required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.Email.Required">
+    <Value>Email must required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.GenerateDate.Required">
+    <Value>Generate Date must required</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Validator.InquiryDate.Required">
+    <Value>Inquiry Date must required</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation List-->
+
+  <LocaleResource Name="nop.cypher.misc.mjstraders.admin.salesquotationcustomer.create.title">
+    <Value>Create customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="nop.cypher.misc.mjstraders.admin.salesquotationcustomer.edit.title">
+    <Value>Edit customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Added">
+    <Value>The new sales quotation customer added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Deleted">
+    <Value>The sales quotation deleted customer successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.Updated">
+    <Value>The sales quotation customer has been updated successfully.</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Create.Page.Title">
+    <Value>Add new sales quotation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Create.Title">
+    <Value>Add a new sales quotation</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Edit.Page.Title">
+    <Value>Edit sales quotation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Edit.Title">
+    <Value>Edit a sales quotation</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Panel.Title">
+    <Value>Sales quotation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Panel.Title">
+    <Value>Sales quotation lines</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Added">
+    <Value>The new sales quotation added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Deleted">
+    <Value>The sales quotation deleted successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Updated">
+    <Value>The sales quotation has been updated successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Sent">
+    <Value>The sales quotation sent successfully.</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.CreatedBy">
+    <Value>Created By</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.CreatedBy.Hint">
+    <Value>Created By</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.ReferenceNumber">
+    <Value>Reference No.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.ReferenceNumber.Hint">
+    <Value>Unique reference number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Title">
+    <Value>Title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Title.Hint">
+    <Value>Enter title</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Name">
+    <Value>Customer Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Name.Hint">
+    <Value>Enter name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Email">
+    <Value>Email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Email.Hint">
+    <Value>Enter email</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Company">
+    <Value>Company</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Company.Hint">
+    <Value>Enter company for send quotation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Designation">
+    <Value>Designation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.Designation.Hint">
+    <Value>Enter designation</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.InquiryDate">
+    <Value>Inquiry date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.InquiryDate.Hint">
+    <Value>Enter inquiry date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.SalesQuotationNote">
+    <Value>Additional Note</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.SalesQuotationNote.Hint">
+    <Value>Enter Sales Quotation Note which will be display on Sales Quotation PDF file</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.SendFromEntity">
+    <Value>Send from</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.SendFromEntity.Hint">
+    <Value>Send from</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.IsTaxInclusive">
+    <Value>Tax Inclusive?</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.IsTaxInclusive.Hint">
+    <Value>Select if this quotation is tax inclusive. PDF will print according to this.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.DeliveryTerms">
+    <Value>Delivery terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.DeliveryTerms.Hint">
+    <Value>Delivery terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.DeliveryCharges">
+    <Value>Delivery charges</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.DeliveryCharges.Hint">
+    <Value>Delivery Charges</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.PaymentTerms">
+    <Value>Payment terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.PaymentTerms.Hint">
+    <Value>Payment terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.ValidUntil">
+    <Value>Valid until</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.ValidUntil.Hint">
+    <Value>Valid until</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.GenerateDate">
+    <Value>Generate date</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotation.GenerateDate.Hint">
+    <Value>Enter generate date</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation line List-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Description">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Qty">
+    <Value>Qty</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Price">
+    <Value>Price</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation line -->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Added">
+    <Value>The new sales quotation line added successfully.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Add.Button">
+    <Value>Add new sales quotation line</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.SaveBeforeEdit">
+    <Value>You need to save the sales quotation before you can add sales quotation line for this sales quotation page.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Name">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Name.Hint">
+    <Value>Name</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Description">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Description.Hint">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Qty">
+    <Value>Qty</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Qty.Hint">
+    <Value>Qty</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Price">
+    <Value>Price</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Price.Hint">
+    <Value>Price</Value>
+  </LocaleResource>
+
+  <!--Admin / Sales quotation document -->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Panel.Title">
+    <Value>Add new quotation documnet</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Download">
+    <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Download.Hint">
+    <Value>Download</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Fields.Download">
+    <Value>Download</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Fields.FileName">
+    <Value>File name</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.SaveBeforeEdit">
+    <Value>You need to save the sales quotation before you can add sales quotation document for this sales quotation page.</Value>
+  </LocaleResource>
+
+  <!--Pdf-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Header.Title">
+    <Value>SALES QUOTE</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Note1">
+    <Value>PLEASE NOTE THAT ALL PRICES ARE {0} OF ALL TAXES.</Value>
+  </LocaleResource>
+  <LocaleResource Name="INCLUSIVE">
+    <Value>INCLUSIVE</Value>
+  </LocaleResource>
+  <LocaleResource Name="EXCLUSIVE">
+    <Value>EXCLUSIVE</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Note2">
+    <Value>WE WILL BE HAPPY TO PROVIDE ANY FURTHER INFORMATION YOU MAY NEED AND TRUST THAT YOU CALL ON US TO FILL YOUR ORDER, WHICH WILL RECIEVE OUR PROMPT AND CAREFUL ATTENTION</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.TermsAndCondition">
+    <Value>*Terms and Condition</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.InquiryDate">
+    <Value>Thank you for your inquiry dated : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Info">
+    <Value>We are pleased to quote you the following</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.DeliveryTerms">
+    <Value>(i) Delivery Terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.DeliveryCharges">
+    <Value>(ii) Delivery charges</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.PaymentTerms">
+    <Value>(iii) Payment Terms</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.ValidUntil">
+    <Value>(iv) Valid Until</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.AdditionalNote">
+    <Value>Additional Note</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Signature">
+    <Value>Signature with Stamp</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Date">
+    <Value>Date</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Field.SNo">
+    <Value>S/NO</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Field.Qty">
+    <Value>Qty</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Field.Description">
+    <Value>Description</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Field.Price">
+    <Value>Unit Price / PKR</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.From">
+    <Value>From : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.To">
+    <Value>To : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.ReferenceNumber">
+    <Value>Ref No. {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Name">
+    <Value>Name : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Name.Hint">
+    <Value>Shoaib M. Sadriwala</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Address">
+    <Value>Address : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Address.Hint">
+    <Value>Shop no. 47 Adnan Centre Nicol Road karachi, Pakistan</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Phone">
+    <Value>Phone : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Phone.Hint">
+    <Value> 021 32422197 / 021 32427654</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Mob">
+    <Value>Mob : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.Mob.Hint">
+    <Value>03218278672</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.NTN">
+    <Value>NTN : {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.PDF.STRNNo">
+    <Value>STRN No : {0}</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="SendNotification">
+    <Value>Send Notification</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationNewLine.Panel.Title">
+    <Value>Add new quotation line</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Select">
+    <Value>Select Any Purchase Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Button.select">
+    <Value>Select Purchase Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Mapping.Title">
+    <Value>Purchase Order Mapping</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Tooltip">
+    <Value>Select purchase order for map with order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.SelectedMapping">
+    <Value>Selected Purchase Order </Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Account.CustomerOrders.PaymentStatus">
+    <Value>Payment status</Value>
+  </LocaleResource>
+  <LocaleResource Name="Account.CustomerOrders.ShippingStatus">
+    <Value>Shipping status</Value>
+  </LocaleResource>
+
+
+  <!-- order invoice-->
+
+  <!--<LocaleResource Name="PDFInvoice.PurchaseOrderLine">
+    <Value>This invoice is against to purchase order: {0}</Value>
+  </LocaleResource>-->  
+    <LocaleResource Name="PDFInvoice.PurchaseOrder">
+    <Value>This invoice is against to purchase order: </Value>
+  </LocaleResource>
+
+  <!-- Shipment invoice-->
+
+  <LocaleResource Name="PDFPackagingSlip.Title">
+    <Value>Delivery Invoice</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.SubTitle.AccountCopy">
+    <Value>Account Copy</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.SubTitle.StoreCopy">
+    <Value>Store Copy</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.SubTitle.MJSCopy">
+    <Value>MJS Copy</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.Shipment#">
+    <Value>Delivery Invoice Id:{0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.ShipmentDate">
+    <Value>Shipment Date:{0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.Order">
+    <Value>Sales Invoice No.:{0}</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="PDFPackagingSlip.Unit">
+    <Value>Unit</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.PiecePerUnit">
+    <Value>Piece Per Unit</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="PDFPackagingSlip.Shipment.FooterNote">
+    <Value>Note: This shipment slip is computer generated and no signature is required.</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.Title">
+    <Value>Sender Information</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line1">
+    <Value>Name : MJS Traders</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line2">
+    <Value>Phone : 02132422197</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line3">
+    <Value>Mobile : 03218278672</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line4">
+    <Value>Address: Shop no 47</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line5">
+    <Value>adnan centre nicol road, karachi</Value>
+  </LocaleResource>
+  <LocaleResource Name="PDFPackagingSlip.CompanyAddress.line6">
+    <Value>Pakistan</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Admin.Orders.List.OrderType">
+    <Value>Order Type</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Admin.Orders.List.OrderType.Hint">
+    <Value>Select Order Type</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Admin.Orders.List.OrderType.all">
+    <Value>All</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.List.OrderType.OnlineOrders">
+    <Value>Online Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Admin.Orders.List.OrderType.corporateOrders">
+    <Value>Corporate Orders</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.OrderList.PurchaseOrder">
+    <Value>Purchase Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.CheckNumber.PopupTitle">
+    <Value>Check number- Check/Money Order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.CheckNumber.SaveAndMarkAsPaid">
+    <Value>Save check number and Mark As Paid</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.Field.CheckNumber">
+    <Value>Check Number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.Field.CheckNumber.Hint">
+    <Value>Check Number of order</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.required.CheckNumber">
+    <Value>Check Number Required</Value>
+  </LocaleResource>
+
+
+  <!-- Cash memo slip-->
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.Button">
+    <Value>Cash Memo</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.Error.ShipmentNotFound">
+    <Value>Shipment not found in system</Value>
+  </LocaleResource>
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.title">
+    <Value>Cash/Sales Invoice</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.PONumber">
+    <Value>PO Number: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.ShippingInvoiceNumber">
+    <Value>Shipping Invoice Number: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.Date">
+    <Value>Date: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.SalesInvoiceNumber">
+    <Value>Sales Invoice Number: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.SalesInvoiceDate">
+    <Value>Sales Invoice Date: {0}</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.invoiceagainsttolable">
+    <Value>This invoice against:</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Shipment.CashMemo.pdf.footernote">
+    <Value>Note: This invoice is computer generated and no signature is required.</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Orders.Fields.Customer.OrderPONumber">
+    <Value>PO Number</Value>
+  </LocaleResource>
+
+  <!-- Product Detail-->
+
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.Product.CustomDetail.Title">
+    <Value>Product Additional Detail</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductUnit">
+    <Value>Product Unit</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductUnit.Hint">
+    <Value>Determine product unit like Box, package, bag, kg etc. 1 Product quantity = 1 Box for corporate customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductUnit">
+    <Value>Product Unit</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductUnit.Hint">
+    <Value>Determine product unit like Box, package, bag, kg etc</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductUnit.Hint">
+    <Value>Determine product unit like Box, package, bag, kg etc. 1 Product quantity = 1 Box for corporate customer</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductPiecePerUnit">
+    <Value>Product Piece Per Unit</Value>
+  </LocaleResource>
+  <LocaleResource Name="Nop.Cypher.Misc.MJSTraders.Admin.ProductDetailCustom.ProductPiecePerUnit.Hint">
+    <Value>
+      Determine number of product include in single unit. Like if product unit is Box and single box have 20 unit of product then set value 20 Unit per Box. This will display in packaging slip.
+      So make sure this added proper.
+    </Value>
+  </LocaleResource>
+  <LocaleResource Name="nop.cypher.productdocument.admin.document.download.link">
+    <Value>Download</Value>
+  </LocaleResource>
+
+</Language>

@@ -1,0 +1,3 @@
+﻿@model OrderModel
+
+@await Component.InvokeAsync("PODocument", new { orderId = Model.Id })

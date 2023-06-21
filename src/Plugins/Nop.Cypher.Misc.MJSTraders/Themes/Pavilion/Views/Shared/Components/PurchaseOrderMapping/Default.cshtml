@@ -1,0 +1,76 @@
+﻿@model PurchaseOrderMappingModel
+
+<div class="accordion-tab shipping">
+    <div class="accordion-tab-title">
+        <strong>@T("Purchase Order") </strong>
+    </div>
+
+    <script asp-location="Footer">
+
+        $(document).ready(function () {
+            var _ponumber;
+
+            $('#select-purchase-order').on('click', function () {
+                _ponumber = $("#@Html.IdFor(model => model.PurchaseOrderId)").val();
+                if (_ponumber == "0") {
+                    alert("Please select any purchase order");
+                    return false;
+                }
+
+                var _url = 'SelectPurchaseOrder/' + _ponumber;
+                displayAjaxLoading(true);
+                $.ajax({
+                    cache: false,
+                    type: "Get",
+                    url: _url,
+                    success: function (data, textStatus, jqXHR) {
+                        if (data.status == true || data.status == 'true') {
+                            window.location.reload();
+                        } else {
+                            alert(data.message);
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        alert('Failed to retrieve purchase order detail.');
+                    },
+                    complete: function (jqXHR, textStatus) {
+                        displayAjaxLoading();
+                    }
+                });
+            });
+
+        });
+    </script>
+    <div class="accordion-tab-content">
+        <div class="estimate-shipping">
+            <div class="title">
+                <strong>@T("Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Mapping.Title")</strong>
+            </div>
+            <div class="hint">@T("Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Tooltip")</div>
+            @if (Model.IsSelected)
+            {
+                <div class="purchase-order-result">
+                    <div class="title">
+                        <strong>@T("Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.SelectedMapping")</strong>
+                    </div>
+                    <div class="po-result">
+                        <button type="button" class="btn button-2 downloadfile" name="download" onclick="setLocation('@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId })')">@Model.PurchaseOrderName</button>
+                    </div>
+                </div>
+                <br />
+            }
+            <div class="shipping-options">
+                <div class="inputs">
+                    <label asp-for="PurchaseOrderId " asp-postfix=":"></label>
+                    <select asp-for="PurchaseOrderId " asp-items="Model.PurchaseOrders" class="state-input"></select>
+                    <span id="select-purchase-loading-progress" style="display: none;" class="please-wait">@T("Common.Wait...")</span>
+                </div>
+
+                <div class="buttons">
+                    <input id="select-purchase-order" type="button" value="@T("Nop.Cypher.Misc.MJSTraders.OrderMapping.PurchaseOrder.Button.select")" class="button-2 estimate-shipping-button" />
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

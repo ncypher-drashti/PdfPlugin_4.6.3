@@ -1,0 +1,6 @@
+﻿@model CustomerModel
+
+<a href="@Url.Action("AddQuote","SalesQuotation",new {customerId=Model.Id })" class="btn btn-primary">
+    <i class="far fa-plus-square"></i>
+    @T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationCustomer.AddNew")
+</a>

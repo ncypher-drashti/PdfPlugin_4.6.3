@@ -1,0 +1,11 @@
+﻿{
+  "Group": "nopCypher",
+  "FriendlyName": "Cypher MJSTraders",
+  "SystemName": "Nop.Cypher.Misc.MJSTraders",
+  "Version": "2.1.3",
+  "SupportedVersions": [ "4.60" ],
+  "Author": "Nop Cypher",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Cypher.Misc.MJSTraders.dll",
+  "Description": ""
+}

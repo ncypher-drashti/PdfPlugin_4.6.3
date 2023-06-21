@@ -1,0 +1,13 @@
+﻿@model PODocumentModel
+@if (Model.IsActive)
+{
+    @if (Model.DownloadId1 > 0)
+    {
+        <li>
+            @T("Nop.Cypher.Misc.MJSTraders.OrderList.PurchaseOrder"):
+            <span class="order-status">
+                <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId1 })">@Model.Title1</a>
+            </span>
+        </li>
+    }
+}

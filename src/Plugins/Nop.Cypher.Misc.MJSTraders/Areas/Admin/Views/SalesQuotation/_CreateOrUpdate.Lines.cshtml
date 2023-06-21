@@ -1,0 +1,87 @@
+﻿@model SalesQuotationModel
+
+<div class="card-body">
+    @if (Model.Id > 0)
+    {
+        <div class="card card-default">
+            <div class="card-body">
+                @await Html.PartialAsync("Table", new DataTablesModel
+                {
+                    Name = "salesquotationline-grid",
+                    UrlRead = new DataUrl("SalesQuotationLineList", "SalesQuotation", new RouteValueDictionary { [nameof(Model.SalesQuotationLineSearchModel.SaleQuotationId)] = Model.SalesQuotationLineSearchModel.SaleQuotationId }),
+                    UrlDelete = new DataUrl("SalesQuotationLineDelete", "SalesQuotation", null),
+                    UrlUpdate = new DataUrl("SalesQuotationLineUpdate", "SalesQuotation", null),
+                    Length = Model.SalesQuotationLineSearchModel.PageSize,
+                    LengthMenu = Model.SalesQuotationLineSearchModel.AvailablePageSizes,
+                    ColumnCollection = new List<ColumnProperty>
+                        {
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Name))
+                            {
+                                Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Name").Text,
+                                Width="100",
+                                Editable=true,
+                                EditType=EditType.String
+                            },
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Description))
+                            {
+                                Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Description").Text,
+                                Width = "150",
+                                Editable=true,
+                                EditType=EditType.String
+                            },
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Qty))
+                            {
+                                Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Qty").Text,
+                                Width = "100",
+                                Editable=true,
+                                EditType=EditType.Number
+                            },
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Price))
+                            {
+                                Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.Fields.Price").Text,
+                                Width = "100",
+                                Editable=true,
+                                EditType=EditType.String
+                            },
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Id))
+                            {
+                                Title = T("Admin.Common.Edit").Text,
+                                Width = "100",
+                                ClassName =  NopColumnClassDefaults.Button,
+                                Render = new RenderButtonsInlineEdit()
+                            },
+                            new ColumnProperty(nameof(SalesQuotationLineModel.Id))
+                            {
+                                Title = T("Admin.Common.Delete").Text,
+                                Width = "100",
+                                Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
+                                ClassName = NopColumnClassDefaults.Button
+                            }
+                        }
+                })
+            </div>
+            <div class="card-footer">
+                <input type="submit" id="btnRefreshSalesQuotationLine" style="display: none" />
+                <script>
+                    $(document).ready(function () {
+                        $('#btnRefreshSalesQuotationLine').click(function () {
+                            //refresh grid
+                            updateTable('#salesquotationline-grid');
+
+                            //return false to don't reload a page
+                            return false;
+                        });
+                    });
+                </script>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="card card-default">
+            <div class="card-body">
+                @T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationLine.SaveBeforeEdit")
+            </div>
+        </div>
+    }
+</div>

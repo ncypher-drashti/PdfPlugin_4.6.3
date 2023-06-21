@@ -1,0 +1,31 @@
+﻿@model SalesQuotationCustomerModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Name" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Email" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Company" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="Company" />
+            <span asp-validation-for="Company"></span>
+        </div>
+    </div>
+</div>

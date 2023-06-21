@@ -1,0 +1,157 @@
+﻿@model SalesQuotationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="CreatedBy" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="CreatedBy" />
+            <span asp-validation-for="CreatedBy"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="ReferenceNumber" />
+        </div>
+        <div class="col-sm-9">
+            <div class="form-text-row">@Model.ReferenceNumber</div>
+            <input asp-for="ReferenceNumber" type="hidden" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="QuotationTitle" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="QuotationTitle" />
+            <span asp-validation-for="QuotationTitle"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Name" />
+        </div>
+        <div class="col-md-9">
+            <div class="form-text-row">@Model.Name</div>
+            <input asp-for="Name" type="hidden" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Email" />
+        </div>
+        <div class="col-sm-9">
+            <div class="form-text-row">@Model.Email</div>
+            <input asp-for="Email" type="hidden" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="EmailCC" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="EmailCC" />
+            <span asp-validation-for="EmailCC"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Company" />
+        </div>
+        <div class="col-sm-9">
+            <div class="form-text-row">@Model.Company</div>
+            <input asp-for="Company" type="hidden" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="Designation" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="Designation" />
+            <span asp-validation-for="Designation"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="InquiryDate" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="InquiryDate" />
+            <span asp-validation-for="InquiryDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="GenerateDate" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="GenerateDate" />
+            <span asp-validation-for="GenerateDate"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="IsTaxInclusive" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="IsTaxInclusive" />
+            <span asp-validation-for="IsTaxInclusive"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="DeliveryTerms" />
+        </div>
+        <div class="col-sm-9">
+            <nop-textarea asp-for="DeliveryTerms" />
+            <span asp-validation-for="DeliveryTerms"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="DeliveryCharges" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="DeliveryCharges" />
+            <span asp-validation-for="DeliveryCharges"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="PaymentTerms" />
+        </div>
+        <div class="col-sm-9">
+            <nop-textarea asp-for="PaymentTerms" />
+            <span asp-validation-for="PaymentTerms"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="ValidUntil" />
+        </div>
+        <div class="col-sm-9">
+            <nop-editor asp-for="ValidUntil" />
+            <span asp-validation-for="ValidUntil"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-3">
+            <nop-label asp-for="SalesQuotationNote" />
+        </div>
+        <div class="col-sm-9">
+            <nop-textarea asp-for="SalesQuotationNote" />
+            <span asp-validation-for="SalesQuotationNote"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-label asp-for="SendFromEntity" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="SendFromEntity" asp-items="Model.AvailableEntities" />
+            <span asp-validation-for="SendFromEntity"></span>
+        </div>
+    </div>
+</div>

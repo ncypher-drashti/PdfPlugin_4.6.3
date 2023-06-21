@@ -1,0 +1,111 @@
+﻿@model SalesQuotationModel
+
+<div class="card-body">
+    @if (Model.Id > 0)
+    {
+            @await Html.PartialAsync("Table", new DataTablesModel
+            {
+                Name = "salesquotationdocument-grid",
+                UrlRead = new DataUrl("SalesQuotationDocumentList", "SalesQuotation", new RouteValueDictionary { [nameof(Model.SalesQuotationDocumentModel.SaleQuotationId)] = Model.SalesQuotationDocumentModel.SaleQuotationId }),
+                UrlDelete = new DataUrl("DeleteSalesQuotationDocument", "SalesQuotation", null),
+                Length = Model.SalesQuotationDocumentSearchModel.PageSize,
+                LengthMenu = Model.SalesQuotationDocumentSearchModel.AvailablePageSizes,
+                ColumnCollection = new List<ColumnProperty>
+                {
+                    new ColumnProperty(nameof(SalesQuotationDocumentModel.FileName))
+                    {
+                        Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Fields.FileName").Text,
+                        Width = "50",
+                    },
+                    new ColumnProperty(nameof(SalesQuotationDocumentModel.DownloadId))
+                    {
+                        Title = T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.Fields.Download").Text,
+                        Width = "50",
+                        ClassName =  NopColumnClassDefaults.Button,
+                        Render = new RenderCustom("renderColumnDownloadId")
+                    },
+                    new ColumnProperty(nameof(SalesQuotationDocumentModel.Id))
+                    {
+                        Title = T("Admin.Common.Delete").Text,
+                        Width = "100",
+                        Render = new RenderButtonRemove(T("Admin.Common.Delete").Text),
+                        ClassName = NopColumnClassDefaults.Button
+                    }
+                }
+            })
+            <div class="card card-default">
+                <div class="card-header">
+                    @T("Admin.Common.AddNewRecord")
+                </div>
+                <div class="card-body">
+                    <input asp-for="@Model.SalesQuotationDocumentModel.SaleQuotationId" type="hidden" />
+
+                    <div class="form-group row">
+                        <div class="col-sm-3">
+                            <nop-label asp-for="@Model.SalesQuotationDocumentModel.DownloadId" />
+                        </div>
+                        <div class="col-sm-9">
+                            <nop-editor asp-for="@Model.SalesQuotationDocumentModel.DownloadId" />
+                            <span asp-validation-for="@Model.SalesQuotationDocumentModel.DownloadId"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-9 offset-md-3">
+                            <button type="button" id="add-salesquotation-document" class="btn btn-primary">@T("Admin.Common.AddNewRecord")</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function renderColumnDownloadId(data, type, row, meta) {
+                    return (row.DownloadId > 0) ? '<a class="btn btn-default" href="@Url.Content("~/Admin/Download/DownloadFile")?downloadGuid=' + row.DownloadGuid + '"><i class="fa fa-download"></i>@T("Nop.Cypher.ProductDocument.Admin.Document.Download.Link")</a>' : '@T("Nop.Cypher.ProductDocument.Admin.Document.Download.Link.No")';
+                }
+            </script>
+    }
+    else
+    {
+        <div class="card card-default">
+            <div class="card-body">
+                @T("Nop.Cypher.Misc.MJSTraders.Admin.SalesQuotationDocument.SaveBeforeEdit")
+            </div>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#add-salesquotation-document').click(function () {
+            $('#add-salesquotation-document').attr('disabled', true);
+            var postData = {
+                DownloadId: $("#@Html.IdFor(model => model.SalesQuotationDocumentModel.DownloadId)").val(),
+                SaleQuotationId: $("#@Html.IdFor(model => model.SalesQuotationDocumentModel.SaleQuotationId)").val()
+            };
+            addAntiForgeryToken(postData);
+
+            $.ajax({
+                cache: false,
+                type: "POST",
+                url: "@Html.Raw(Url.Action("CreateSalesQuotationDocument", "SalesQuotation", null))",
+                data: postData,
+                success: function (data, textStatus, jqXHR) {
+                    if (data.Result) {
+                        //reload grid
+                        updateTable('#salesquotationdocument-grid');
+                        //clear input value
+                        $('.margin-t-5').trigger('click');
+                        $('#add-salesquotation-document').attr('disabled', false);
+                        return;
+                    } else {
+                        //display errors if returned
+                        display_nop_error(data);
+                        $('#add-salesquotation-document').attr('disabled', false);
+                        return;
+                    }
+                },
+                complete: function (jqXHR, textStatus) {
+                    $('#add-salesquotation-document').attr('disabled', false);
+                }
+            });
+        });
+    });
+</script>

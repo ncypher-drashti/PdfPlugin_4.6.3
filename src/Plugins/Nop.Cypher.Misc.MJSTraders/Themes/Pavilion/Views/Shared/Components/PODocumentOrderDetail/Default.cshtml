@@ -1,0 +1,61 @@
+﻿@model PODocumentModel
+@if (Model.IsActive)
+{
+    if (Model.DownloadId1 > 0 || Model.DownloadId2 > 0 || Model.DownloadId3 > 0 || Model.DownloadId4 > 0 || Model.DownloadId5 > 0)
+    {
+        <div class="po_document">
+            <p>@T("mjst.podocument.title")</p>
+        </div>
+    }
+
+    @if (Model.DownloadId1 > 0)
+    {
+        <div class="download">
+            @if (!string.IsNullOrWhiteSpace(Model.Title1))
+            {
+                <span>@Model.Title1</span>
+            }
+            <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId1 })">@T("DownloadableProducts.Fields.Download")</a>
+        </div>
+    }
+    @if (Model.DownloadId2 > 0)
+    {
+        <div class="download">
+            @if (!string.IsNullOrWhiteSpace(Model.Title2))
+            {
+                <span>@Model.Title2</span>
+            }
+            <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId2 })">@T("DownloadableProducts.Fields.Download")</a>
+        </div>
+    }
+    @if (Model.DownloadId3 > 0)
+    {
+        <div class="download">
+            @if (!string.IsNullOrWhiteSpace(Model.Title3))
+            {
+                <span>@Model.Title3</span>
+            }
+            <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId3 })">@T("DownloadableProducts.Fields.Download")</a>
+        </div>
+    }
+    @if (Model.DownloadId4 > 0)
+    {
+        <div class="download">
+            @if (!string.IsNullOrWhiteSpace(Model.Title4))
+            {
+                <span>@Model.Title4</span>
+            }
+            <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId4 })">@T("DownloadableProducts.Fields.Download")</a>
+        </div>
+    }
+    @if (Model.DownloadId5 > 0)
+    {
+        <div class="download">
+            @if (!string.IsNullOrWhiteSpace(Model.Title5))
+            {
+                <span>@Model.Title5</span>
+            }
+            <a href="@Url.RouteUrl("Nop.Cypher.Misc.MJSTraders.OrderDetail.Download.PODocumentDownload", new { downloadId = Model.DownloadId5 })">@T("DownloadableProducts.Fields.Download")</a>
+        </div>
+    }
+}

@@ -1,0 +1,19 @@
+﻿@model Nop.Cypher.Misc.MJSTraders.Areas.Admin.Model.Orders.CheckNumberModel
+
+<div class="form-group row">
+    <div class="col-md-3">
+        <div class="label-wrapper">
+            <label class="col-form-label" for="CheckNumber">@T("Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.Field.CheckNumber")</label>
+            <div class="ico-help" title="@T("Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.Field.CheckNumber.Hint")">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            @*<div title="@T("Nop.Cypher.Misc.MJSTraders.CheckMoneyOrder.Order.Field.CheckNumber.Hint")" data-toggle="tooltip" class="ico-help">
+                <i class="fas fa-question-circle"></i>
+            </div>*@
+        </div>
+    </div>
+    <div class="col-md-9">
+        <div class="form-text-row">@Model.CheckNumber</div>
+    </div>
+</div>
+

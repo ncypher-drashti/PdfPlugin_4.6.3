@@ -1,0 +1,64 @@
+﻿@model ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="Enable_OverrideForStore" asp-input="Enable" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="Enable" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="Enable" />
+            <span asp-validation-for="Enable"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="POCustomerId_OverrideForStore" asp-input="POCustomerId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="POCustomerId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="POCustomerId" asp-items="Model.AvailableCustomer" />
+            <span asp-validation-for="POCustomerId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="PONumberPageSizeOnAccountPage_OverrideForStore" asp-input="PONumberPageSizeOnAccountPage" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="PONumberPageSizeOnAccountPage" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="PONumberPageSizeOnAccountPage" />
+            <span asp-validation-for="PONumberPageSizeOnAccountPage"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="CartOfferCustomerRoleId_OverrideForStore" asp-input="CartOfferCustomerRoleId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="CartOfferCustomerRoleId" />
+        </div>
+        <div class="col-md-9">
+            <nop-select asp-for="CartOfferCustomerRoleId" asp-items="Model.AvailableCustomer" />
+            <span asp-validation-for="CartOfferCustomerRoleId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="AbandonedMessageTitleContent_OverrideForStore" asp-input="AbandonedMessageTitleContent" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="AbandonedMessageTitleContent" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="AbandonedMessageTitleContent" />
+            <span asp-validation-for="AbandonedMessageTitleContent"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="OfferTime_OverrideForStore" asp-input="OfferTime" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="OfferTime" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="OfferTime" />
+            <span asp-validation-for="OfferTime"></span>
+        </div>
+    </div>
+</div>

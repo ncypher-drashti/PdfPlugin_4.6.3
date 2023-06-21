@@ -1,0 +1,222 @@
+﻿@model PODocumentModel
+<input asp-for="OrderId" value="@Model.OrderId" hidden="hidden" />
+<div class="card-body">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="cards-group">
+                <div class="card card-default">
+                    <div class="card-header">
+                        @T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document1")
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Title1" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="Title1" />
+                                <span asp-validation-for="Title1"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DownloadId1" />
+                            </div>
+                            <div class="col-sm-9 order-po-documents">
+                                <nop-editor asp-for="DownloadId1" />
+                                <span asp-validation-for="DownloadId1"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        @T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document2")
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Title2" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="Title2" />
+                                <span asp-validation-for="Title2"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DownloadId2" />
+                            </div>
+                            <div class="col-sm-9  order-po-documents">
+                                <nop-editor asp-for="DownloadId2" />
+                                <span asp-validation-for="DownloadId2"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        @T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document3")
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Title3" />
+                            </div>
+                            <div class="col-sm-9 ">
+                                <nop-editor asp-for="Title3" />
+                                <span asp-validation-for="Title3"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DownloadId3" />
+                            </div>
+                            <div class="col-sm-9  order-po-documents">
+                                <nop-editor asp-for="DownloadId3" />
+                                <span asp-validation-for="DownloadId3"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        @T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document4")
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Title4" />
+                            </div>
+                            <div class="col-sm-9 ">
+                                <nop-editor asp-for="Title4" />
+                                <span asp-validation-for="Title4"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DownloadId4" />
+                            </div>
+                            <div class="col-sm-9  order-po-documents">
+                                <nop-editor asp-for="DownloadId4" />
+                                <span asp-validation-for="DownloadId4"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-header">
+                        @T("Nop.Cypher.Misc.MJSTraders.Admin.PODocument.Document5")
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="Title5" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="Title5" />
+                                <span asp-validation-for="Title5"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="DownloadId5" />
+                            </div>
+                            <div class="col-sm-9  order-po-documents">
+                                <nop-editor asp-for="DownloadId5" />
+                                <span asp-validation-for="DownloadId5"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <div class="col-sm-3">
+                                <nop-label asp-for="IsActive" />
+                            </div>
+                            <div class="col-sm-9">
+                                <nop-editor asp-for="IsActive" />
+                                <span asp-validation-for="IsActive"></span>
+                            </div>
+                        </div>
+                        @if (Model.Id > 0)
+                        {
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <nop-label asp-for="CreateOnUtc" />
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="form-text-row">@Model.CreateOnUtc</div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-sm-3">
+                                    <nop-label asp-for="UpdateOnUtc" />
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="form-text-row">@Model.UpdateOnUtc</div>
+                                </div>
+                            </div>
+                        }
+                        <div class="form-group row">
+                            <div class="col-md-9 offset-md-3">
+                                <input type="button" id="po-document-detail-save-btn" name="save" class="btn btn-primary" value="@T("Admin.Common.Save")" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        //$("#order-po-documents")
+        $(".order-po-documents .form-group:first-child").hide()
+
+        $('#po-document-detail-save-btn').click(function () {
+
+                var postData = {
+                    OrderId: $('#@Html.IdFor(model => model.OrderId)').val(),
+                    Title1: $('#@Html.IdFor(model => model.Title1)').val(),
+                    DownloadId1:$('#@Html.IdFor(model => model.DownloadId1)').val(),
+                    Title2: $('#@Html.IdFor(model => model.Title2)').val(),
+                    DownloadId2 : $('#@Html.IdFor(model => model.DownloadId2)').val(),
+                    Title3: $('#@Html.IdFor(model => model.Title3)').val(),
+                    DownloadId3 : $('#@Html.IdFor(model => model.DownloadId3)').val(),
+                    Title4: $('#@Html.IdFor(model => model.Title4)').val(),
+                    DownloadId4 : $('#@Html.IdFor(model => model.DownloadId4)').val(),
+                    Title5: $('#@Html.IdFor(model => model.Title5)').val(),
+                    DownloadId5 : $('#@Html.IdFor(model => model.DownloadId5)').val(),
+                    IsActive: $('#@Html.IdFor(model => model.IsActive)').prop('checked'),
+                };
+                addAntiForgeryToken(postData);
+
+                $.ajax({
+                    cache: false,
+                    type: "POST",
+                    url: "@(Url.Action("SavePODocumentDetails", "PODocument"))",
+                    data: postData,
+                    success: function (data, textStatus, jqXHR) {
+                        if (!data.Result) {
+                            return;
+                        }
+                        var aa = "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button> The PO document has been updated successfully.</div>";
+
+                        $(".content-wrapper").prepend(aa);
+                        window.location.reload();
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        $("#poDocumentAddAlert").click();
+                    },
+                    complete: function (jqXHR, textStatus) {
+                        $('#updatePODocumentAlert').attr('disabled', false);
+                    }
+            });
+            });
+        });
+</script>
+<nop-alert asp-alert-id="updatePODocumentAlert" asp-alert-message="Updated PO document" />
+<nop-alert asp-alert-id="poDocumentAddAlert" asp-alert-message="PO document detail added" />

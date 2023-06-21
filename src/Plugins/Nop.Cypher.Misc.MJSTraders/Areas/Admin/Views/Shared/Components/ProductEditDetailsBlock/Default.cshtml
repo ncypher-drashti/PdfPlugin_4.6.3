@@ -1,0 +1,82 @@
+﻿@model ProductDetailCustomModel
+
+@inject IGenericAttributeService genericAttributeService
+@inject IWebHelper _webHelper
+@inject IWorkContext workContext
+
+@{
+    const string hideProductdetailDetailsBlockAttributeName = "ProductPage.HideProductdetailDetailsBlock";
+    var hideProductdetailDetailsBlock = await genericAttributeService.GetAttributeAsync<bool>(await workContext.GetCurrentCustomerAsync(), hideProductdetailDetailsBlockAttributeName);
+}
+<nop-card asp-name="mjst-productdetail-details" asp-icon="fa fa-book" asp-title="@T("Nop.Cypher.Misc.MJSTraders.Admin.Product.CustomDetail.Title")"
+          asp-hide-block-attribute-name="@hideProductdetailDetailsBlockAttributeName" asp-hide="@hideProductdetailDetailsBlock "
+          asp-advanced="false">
+
+    <input asp-for="ProductId" value="@Model.ProductId" hidden="hidden" />
+
+    <div class="card-body">
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="ProductUnit" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="ProductUnit" />
+                <span asp-validation-for="ProductUnit"></span>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-md-3">
+                <nop-label asp-for="ProductPiecePerUnit" />
+            </div>
+            <div class="col-md-9">
+                <nop-editor asp-for="ProductPiecePerUnit" />
+                <span asp-validation-for="ProductPiecePerUnit"></span>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-9 offset-md-3">
+                <input type="button" id="mjst-product-detail-save-btn" name="save" class="btn btn-primary" value="@T("Admin.Common.Save")" />
+            </div>
+        </div>
+        <div id=""></div>
+    </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#mjst-product-detail-save-btn').click(function () {
+
+                var postData = {
+                    ProductId: $('#@Html.IdFor(model => model.ProductId)').val(),
+                    ProductUnit: $('#@Html.IdFor(model => model.ProductUnit)').val(),
+                    ProductPiecePerUnit: $('#@Html.IdFor(model => model.ProductPiecePerUnit)').val(),
+                };
+                addAntiForgeryToken(postData);
+
+                $.ajax({
+                    cache: false,
+                    type: "POST",
+                    url: "@(Url.Action("SaveProductDetails", "MJSTraders"))",
+                    data: postData,
+                    success: function (data, textStatus, jqXHR) {
+                        if (!data.Result) {
+                            return;
+                        }
+                        var aa = "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>×</button> The Product detail has been updated successfully.</div>";
+
+                        $(".content-wrapper").prepend(aa);
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        //$("#updateHSNDocumentAlert").click();
+                    },
+                    complete: function (jqXHR, textStatus) {
+                        //$('#updateHSNDocumentAlert').attr('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</nop-card>
+<nop-alert asp-alert-id="updateHSNDocumentAlert" asp-alert-message="" />
+<nop-alert asp-alert-id="addHSNDocumentAlert" asp-alert-message="" />

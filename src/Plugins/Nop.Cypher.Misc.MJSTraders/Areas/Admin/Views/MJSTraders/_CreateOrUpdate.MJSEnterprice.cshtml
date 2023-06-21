@@ -1,0 +1,34 @@
+﻿@model ConfigurationModel
+
+<div class="card-body">
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="MJSEnterpriceLogoId_OverrideForStore" asp-input="MJSEnterpriceLogoId" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="MJSEnterpriceLogoId" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="MJSEnterpriceLogoId" />
+            <span asp-validation-for="MJSEnterpriceLogoId"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="MJSEnterpriceNTNNumber_OverrideForStore" asp-input="MJSEnterpriceNTNNumber" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="MJSEnterpriceNTNNumber" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="MJSEnterpriceNTNNumber" />
+            <span asp-validation-for="MJSEnterpriceNTNNumber"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-md-3">
+            <nop-override-store-checkbox asp-for="MJSEnterpriceSTRNNo_OverrideForStore" asp-input="MJSEnterpriceSTRNNo" asp-store-scope="@Model.ActiveStoreScopeConfiguration" />
+            <nop-label asp-for="MJSEnterpriceSTRNNo" />
+        </div>
+        <div class="col-md-9">
+            <nop-editor asp-for="MJSEnterpriceSTRNNo" />
+            <span asp-validation-for="MJSEnterpriceSTRNNo"></span>
+        </div>
+    </div>
+</div>
